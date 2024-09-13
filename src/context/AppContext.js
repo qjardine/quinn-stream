@@ -5,12 +5,11 @@ const AppContext = createContext();
 export function AppProvider({ children }) {
   const [currentPage, setCurrentPage] = useState('Home');
 
-  const value = {
-    currentPage,
-    setCurrentPage,
-  };
-
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={{ currentPage, setCurrentPage }}>
+      {children}
+    </AppContext.Provider>
+  );
 }
 
 export function useAppContext() {

@@ -1,6 +1,6 @@
 import React from 'react';
-import TweetList from '../TweetList';
-import { tweets } from '../tweetData';
+import TweetList from '../components/TweetList';
+import { tweets } from '../data/tweetData';
 
 function Home() {
   return (

@@ -1,29 +1,33 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './QuinnTweet.css';
-import Header from './Header';
+import Header from './components/Header';
 import Sidebar from './Sidebar';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
-import Messages from './pages/Messages';
-import Settings from './pages/Settings';
+import Messages from './pages/Messages'; // Add this import
+import Notifications from './pages/Notifications'; // Add this import
+import { AppProvider } from './context/AppContext';
 
 function App() {
   return (
-    <Router>
-      <div className="quinntweet-app">
-        <Header />
-        <div className="main-content">
-          <Sidebar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/messages" element={<Messages />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
+    <AppProvider>
+      <Router>
+        <div className="quinntweet-app">
+          <Header />
+          <div className="main-content">
+            <Sidebar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/messages" element={<Messages />} />
+              <Route path="/notifications" element={<Notifications />} /> {/* Add this route */}
+              {/* Add other routes as needed */}
+            </Routes>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </AppProvider>
   );
 }
 

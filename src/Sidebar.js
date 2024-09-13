@@ -1,16 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useSidebarItems from './hooks/useSidebarItems';
 
 function Sidebar() {
+  const sidebarItems = useSidebarItems();
+
   return (
-    <aside className="sidebar">
+    <nav className="sidebar">
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        <li><Link to="/messages">Messages</Link></li>
-        <li><Link to="/settings">Settings</Link></li>
+        {sidebarItems.map((item, index) => (
+          <li key={index}>
+            <Link to={item.path || `/${item.label.toLowerCase()}`} className="sidebar-item">
+              <i className={item.icon}></i>
+              <span>{item.label}</span>
+            </Link>
+          </li>
+        ))}
       </ul>
-    </aside>
+    </nav>
   );
 }
 

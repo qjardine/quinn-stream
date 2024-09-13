@@ -1,14 +1,10 @@
 import { useState, useEffect } from 'react';
 
 const defaultItems = [
-  { icon: 'fas fa-home', label: 'Home' },
-  { icon: 'fas fa-hashtag', label: 'Explore' },
+  { icon: 'fas fa-home', label: 'Home', path: '/' },
   { icon: 'fas fa-bell', label: 'Notifications' },
-  { icon: 'fas fa-envelope', label: 'Messages' },
-  { icon: 'fas fa-bookmark', label: 'Bookmarks' },
-  { icon: 'fas fa-list-alt', label: 'Lists' },
-  { icon: 'fas fa-user', label: 'Profile' },
-  { icon: 'fas fa-ellipsis-h', label: 'More' },
+  { icon: 'fas fa-envelope', label: 'Messages', path: '/messages' }, 
+  { icon: 'fas fa-user', label: 'Profile', path: '/profile' },
 ];
 
 function useSidebarItems() {

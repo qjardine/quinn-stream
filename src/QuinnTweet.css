@@ -63,12 +63,26 @@ body {
 }
 
 .sidebar li {
-  padding: 10px 0;
-  cursor: pointer;
+  margin-bottom: 20px;
 }
 
-.sidebar li:hover {
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  transition: color 0.2s;
+}
+
+.sidebar-item:hover {
   color: #1da1f2;
+}
+
+.sidebar-item i {
+  margin-right: 15px;
+  width: 24px;
+  text-align: center;
 }
 
 .tweet-list {
@@ -299,4 +313,77 @@ body {
 
 .contact-button i {
   margin-right: 8px;
+}
+
+/* Add these new styles at the end of the file */
+
+.notifications {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.notifications h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.notification-list {
+  background-color: #192734;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #38444d;
+  text-decoration: none;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item:hover {
+  background-color: #22303c;
+}
+
+.notification-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1da1f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.notification-icon i {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-text {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+
+.notification-highlight {
+  font-weight: bold;
+  color: #1da1f2;
+}
+
+.notification-time {
+  margin: 0;
+  font-size: 12px;
+  color: #8899a6;
 }
