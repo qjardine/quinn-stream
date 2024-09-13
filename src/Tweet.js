@@ -8,7 +8,7 @@ function Tweet({ tweet }) {
         <div className="tweet-header">
           <span className="user-name">{tweet.user}</span>
           <span className="user-handle">{tweet.handle}</span>
-          <span className="tweet-time">{tweet.timestamp}</span>
+          <span className="tweet-time"> · {tweet.timestamp}</span>
         </div>
         <p className="tweet-text">{tweet.content}</p>
         <div className="tweet-actions">

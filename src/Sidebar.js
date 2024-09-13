@@ -1,19 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
   return (
-    <nav className="sidebar">
+    <aside className="sidebar">
       <ul>
-        <li><i className="fas fa-home"></i> Home</li>
-        <li><i className="fas fa-hashtag"></i> Explore</li>
-        <li><i className="fas fa-bell"></i> Notifications</li>
-        <li><i className="fas fa-envelope"></i> Messages</li>
-        <li><i className="fas fa-bookmark"></i> Bookmarks</li>
-        <li><i className="fas fa-list-alt"></i> Lists</li>
-        <li><i className="fas fa-user"></i> Profile</li>
-        <li><i className="fas fa-ellipsis-h"></i> More</li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/profile">Profile</Link></li>
+        <li><Link to="/messages">Messages</Link></li>
+        <li><Link to="/settings">Settings</Link></li>
       </ul>
-    </nav>
+    </aside>
   );
 }
 
